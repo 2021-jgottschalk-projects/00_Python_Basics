@@ -1,12 +1,33 @@
 # calculates the area and perimeter of a rectangle
 # v2 - loops
 
+
+# Functions go here
+def num_check(question):
+    valid = False
+    while not valid:
+
+        error = "Please enter a number that is more than zero"
+
+        try:
+            number_to_check = float(input(question))
+
+            if number_to_check <= 0:
+                print(error)
+            else:
+                return number_to_check
+
+        except ValueError:
+            print(error)
+
+
+# Main routine starts here
 keep_going = ""
 while keep_going == "":
 
     # Get width and height
-    width = float(input("Width: "))
-    height = float(input("Height: "))
+    width = num_check("Width: ")
+    height = num_check("Height: ")
 
     print()
 
